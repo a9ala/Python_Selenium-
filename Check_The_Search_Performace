@@ -1,0 +1,27 @@
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support.select import Select
+
+
+pageUrl = "URL" #Add the URL you want to access 
+
+#Launch URL
+
+driver.get(pageUrl)
+
+driver.implicitly_wait(10)
+	    ###### Change this ######
+assert "Title text found in the page" in driver.title, "page not loaded correctly"
+
+
+# Test the search bar
+														   ###### Change this ######
+search_elem= driver.find_element(by=By.XPATH, value="XPATH for the search bar")
+search_elem.send_keys("recipe")  #Here we ask the script to write the world we want to search for 
+															###### Change this ######
+search_butt = driver.find_element(by=By.XPATH, value="XPATH for the search button")
+driver.execute_script("arguments[0].click();", search_butt);
+print("Page title is: ")
+print(driver.title)
